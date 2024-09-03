@@ -14,6 +14,13 @@ namespace ECommerceAPI.WebApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            var env = builder.Environment;
+
+            builder.Configuration
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsetting.json", optional: false)
+                .AddJsonFile($"appsetting.{env.EnvironmentName}.json", optional: false);
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
