@@ -1,6 +1,8 @@
-﻿namespace ECommerceAPI.Domain.Entities
+﻿using ECommerceAPI.Domain.Common;
+
+namespace ECommerceAPI.Domain.Entities
 {
-    public class Detail
+    public class Detail : EntityBase
     {
         public Detail()
         {
