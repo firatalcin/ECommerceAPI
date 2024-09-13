@@ -1,3 +1,4 @@
+using ECommerceAPI.Persistence;
 
 namespace ECommerceAPI.WebApi
 {
@@ -16,10 +17,13 @@ namespace ECommerceAPI.WebApi
 
             var env = builder.Environment;
 
-            builder.Configuration
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsetting.json", optional: false)
-                .AddJsonFile($"appsetting.{env.EnvironmentName}.json", optional: false);
+            //builder.Configuration
+            //    .SetBasePath(env.ContentRootPath)
+            //    .AddJsonFile("appsetting.json", optional: false)
+            //    .AddJsonFile($"appsetting.{env.EnvironmentName}.json", optional: false);
+
+            //builder.Services.AddPersistence(builder.Configuration);
+
 
             var app = builder.Build();
 
